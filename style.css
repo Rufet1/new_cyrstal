@@ -1,0 +1,43 @@
+.reng {
+    width: 80px;
+    height: 71px;
+    background-color: aqua;
+    position: absolute;
+    top: 493px;
+    left: 134px;
+}
+
+.inline {
+    display: inline;
+}
+
+body{
+    background-image: url("./background_img.jpg");
+}
+
+#div {
+  width: 400px;
+  height: 400px;
+  padding: 4px;
+  margin-bottom: 10px;
+  color: green;
+  background-color: bisque;
+}
+ 
+#title {
+
+  width: 250px;
+  padding: 4px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.aim {
+
+    width: 100px;
+    height: 70px;
+    background-color: green;
+    color: #604179;
+    text-align: center;
+    font-size: 35px
+}

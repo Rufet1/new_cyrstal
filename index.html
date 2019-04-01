@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+        <h1 id="title">CrystalsCollector!</h1>
+        <div id="div">
+                <h4>You will be given a random number at the start of the game.</h4>
+                <h4>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</h4>
+                <h4>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</h4>
+                <h4>The value of each crystal is hidden from you until you click on it.</h4>
+                <h4>Each time when the game starts, the game will change the values of each crystal</h4>
+        </div>
+    <div class="aim"><span class="random"></span></div>
+    <div class="crdiv inline" > <img class="pics" src="./blue.png" <span class="cyrstals"></span></div>
+    <div class="crdiv1 inline"> <img class="pics" src="./green.png" <span class="cyrstals1"></span></div>
+    <div class="crdiv2 inline"> <img class="pics" src="./yellow.png" <span class="cyrstals2"></span></div>
+    <div class="crdiv3 inline"> <img class="pics" src="./red.png" <span class="cyrstals3"></span></div>
+    <div class="reng">
+    <div>Wins : <span class="wins"></span></div>
+    <div>Losses : <span class="losses"></span></div>
+    </div>
+    <div>Your Score : <span class="click_score"></span></div>
+    <script>
+        var a = Math.floor((Math.random() * 102) + 19);
+        var wins = 0;
+        var losses = 0;
+        let click_score = 0;
+        var b = Math.floor((Math.random() * 12) + 1);
+        var b1 = Math.floor((Math.random() * 12) + 1);
+        var b2 = Math.floor((Math.random() * 12) + 1);
+        var b3 = Math.floor((Math.random() * 12) + 1);
+        var score = b + b1 + b2 + b3;
+        $(".random").html(a);
+        $(".cyrstals").html(b);
+        $(".cyrstals1").html(b1);
+        $(".cyrstals2").html(b2);
+        $(".cyrstals3").html(b3);
+        $(".wins").html(wins);
+        $(".losses").text(losses);
+        $(".click_score").html(click_score)
+        function reset(){
+            click_score = 0;
+        }
+        $(".crdiv").on("click", function(){
+            click_score += b;
+        $(".click_score").html(click_score);
+        if (click_score === a){
+            wins++;
+            alert("You Won!");
+            reset();
+            $(".wins").html(wins);
+
+        }
+        if (click_score > a){
+            losses ++;
+            alert("You Lost!");  
+            reset() 
+            $(".losses").text(losses);
+        }
+        })
+        $(".crdiv1").on("click", function(){
+            click_score += b1
+            $(".click_score").html(click_score)
+            if (click_score === a){
+            wins ++;
+            alert("You Won!");
+            reset()  
+            $(".wins").html(wins); 
+        }
+        if (click_score > a){
+            losses ++;
+            alert("You Lost!");   
+            reset()
+            $(".losses").text(losses);
+        }
+        })
+        $(".crdiv2").on("click", function(){
+            click_score += b2
+            $(".click_score").html(click_score)
+            if (click_score === a){
+            wins ++;
+            alert("You Won!")
+            reset()
+            $(".wins").html(wins);
+        }
+        if (click_score > a){
+            losses ++;
+            alert("You Lost!");   
+            reset()
+            $(".losses").text(losses);
+        }
+        })
+        $(".crdiv3").on("click", function(){
+            click_score += b3
+            $(".click_score").html(click_score)
+            if (click_score === a){
+            wins ++;
+            alert("You Won!")
+            reset()
+            $(".wins").html(wins);
+        }
+        if (click_score > a){
+            losses ++;
+            alert("You Lost!");
+            reset()
+            $(".losses").text(losses);   
+        }
+        })
+        
+        console.log(wins)
+    </script>
+</body>
+</html>
